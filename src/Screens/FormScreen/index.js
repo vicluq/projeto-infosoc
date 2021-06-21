@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import FormSection from "../../Components/FormSection";
 import InitialData from "../../data/parameters.json";
 import makeRequest from "../../data/makeRequest";
 import ScreenTypes from "../../data/screens";
-import formSections from "../../data/formSections";
+import { formSections, TOTAL_POINTS } from "../../data/formSections";
 import {
   Container,
   FormContainer,
@@ -13,8 +13,6 @@ import {
   FormTitle,
   FormPoints,
 } from "./styles";
-
-const TOTAL_POINTS = 60;
 
 const Form = ({ changeScreen, setLoading }) => {
   const [error, setError] = useState(false);
@@ -57,40 +55,43 @@ const Form = ({ changeScreen, setLoading }) => {
     setTimeout(() => {}, 2000);
   }
 
-  const inputChange = (event, field_name) => {
-    const inputValue = event.target.value;
-    let totalPoints = 0;
-    console.log(field_name, inputValue);
+  const inputChange = useCallback(
+    (event, field_name) => {
+      const inputValue = event.target.value;
+      let totalPoints = 0;
+      console.log(field_name, inputValue);
 
-    let data = [...formData].map((field) => {
-      let inptPoint;
-      if (
-        field.field_name === field_name &&
-        (field_name === "Login CIn" ||
-          field_name === "Email" ||
-          field_name === "Portador(a) de alguma deficiência" ||
-          field_name === "Gênero")
-      ) {
-        return { ...field, value: inputValue };
-      } else if (
-        field.field_name === field_name &&
-        (Number(inputValue) || inputValue === "")
-      ) {
-        inptPoint = Number(inputValue) || 0;
-        totalPoints += inptPoint; // updating total points
-        return { ...field, value: inputValue };
-      } else {
-        inptPoint = Number(field.value) || 0;
-        totalPoints += inptPoint; // calc total points
-        return field;
-      }
-    });
+      let data = [...formData].map((field) => {
+        let inptPoint;
+        if (
+          field.field_name === field_name &&
+          (field_name === "Login CIn" ||
+            field_name === "Email" ||
+            field_name === "Portador(a) de alguma deficiência" ||
+            field_name === "Gênero")
+        ) {
+          return { ...field, value: inputValue };
+        } else if (
+          field.field_name === field_name &&
+          (Number(inputValue) || inputValue === "")
+        ) {
+          inptPoint = Number(inputValue) || 0;
+          totalPoints += inptPoint; // updating total points
+          return { ...field, value: inputValue };
+        } else {
+          inptPoint = Number(field.value) || 0;
+          totalPoints += inptPoint; // calc total points
+          return field;
+        }
+      });
 
-    setFormData(data);
-    setPoints(TOTAL_POINTS - totalPoints);
-  };
+      setFormData(data);
+      setPoints(TOTAL_POINTS - totalPoints);
+    },
+    [formData]
+  );
 
-  const formSubmit = () => {
+  const formSubmit = useCallback(() => {
     if (points >= 0) {
       setLoading(true);
       makeRequest(formData, "post")
@@ -104,7 +105,7 @@ const Form = ({ changeScreen, setLoading }) => {
           setError(true);
         });
     }
-  };
+  }, [changeScreen, formData, setLoading, points]);
 
   return (
     <Container>

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import formSections from "../../data/formSections";
+import {formSections} from "../../data/formSections";
 
 export const Container = styled.div`
   height: 100%;

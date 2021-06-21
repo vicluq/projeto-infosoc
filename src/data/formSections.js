@@ -1,4 +1,5 @@
-const formSections = {
+export const TOTAL_POINTS = 100;
+export const formSections = {
   YOU: "Você",
   DADOS_E_TECH: "Dados e Tecnologia",
   GOV: "Governo",
@@ -6,4 +7,3 @@ const formSections = {
   ENVIRONMENT: "Ambiente Físico",
 };
 
-export default formSections;
