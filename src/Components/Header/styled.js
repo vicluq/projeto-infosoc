@@ -13,7 +13,10 @@ export const Container = styled.header`
 
 export const Title = styled.h1`
   color: #333;
-  @media (max-width: 800px) {
+  @media (max-width: 1500) {
+    font-size: 24px;
+  }
+  @media (max-width: 600px) {
     font-size: 22px;
   }
 `;
@@ -22,7 +25,7 @@ export const Navbar = styled.nav`
   width: 30%;
   height: 100%;
   background-color: #64efbd;
-  padding: 8px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
