@@ -1,0 +1,79 @@
+[
+    {
+        "field_name": "TICs e Desenvolvimento Tecnológico",
+        "section": "Dados e Tecnologia",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Dados e Informação",
+        "section": "Dados e Tecnologia",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Arranjos Institucionais",
+        "section": "Governo",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Administração e Gerenciamento da Cidade",
+        "section": "Governo",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Serviços Públicos",
+        "section": "Governo",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Economia do Conhecimento e Ambiente Pró-Negócios",
+        "section": "Sociedade",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Capital Humano e Criatividade",
+        "section": "Sociedade",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Governança, Engajamento e Colaboração",
+        "section": "Sociedade",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Inclusão de minorias",
+        "section": "Sociedade",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Ambiente Natural e Sustentabilidade Ecológica",
+        "section": "Ambiente Físico",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    },
+    {
+        "field_name": "Ambiente Construído e Infraestrutura da Cidade",
+        "section": "Ambiente Físico",
+        "value": "",
+        "type": "text",
+        "mandatory": true
+    }
+]
