@@ -59,7 +59,6 @@ const Form = ({ changeScreen, setLoading }) => {
     (event, field_name) => {
       const inputValue = event.target.value;
       let totalPoints = 0;
-      console.log(field_name, inputValue);
 
       let data = [...formData].map((field) => {
         let inptPoint;
@@ -92,11 +91,10 @@ const Form = ({ changeScreen, setLoading }) => {
   );
 
   const formSubmit = useCallback(() => {
-    if (points >= 0) {
+    if (points >= 0 && formData.reduce((curr, { value }) => value && curr, true)) {
       setLoading(true);
       makeRequest(formData, "post")
         .then((res) => {
-          console.log(res);
           setLoading(false);
           changeScreen(ScreenTypes.THANK_YOU_SCREEN);
         })
