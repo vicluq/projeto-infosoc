@@ -8,6 +8,7 @@ function parseData(data) {
     if (
       field_name === "Login CIn" ||
       field_name === "Email" ||
+      field_name === "Portador(a) de alguma deficiência" ||
       field_name === "Gênero"
     ) {
       data_object[field_name] = value;

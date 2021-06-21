@@ -30,7 +30,7 @@ export const Navbar = styled.nav`
 
 export const Button = styled.div`
   height: 30px;
-  width: 100px;
+  width: 90px;
   background-color: #333;
   color: #64efbd;
   display: flex;
@@ -42,7 +42,7 @@ export const Button = styled.div`
   cursor: pointer;
   margin: 0 6px;
   transition: 0.18s ease-in;
-  ${({selected}) => selected ? "border: 3px solid #fff;" : null}
+  ${({selected}) => selected ? "width: 120px; color: #fff;" : null}
 
   &:hover {
     transform: scale(1.08);

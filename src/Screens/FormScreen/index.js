@@ -42,6 +42,14 @@ const Form = ({ changeScreen, setLoading }) => {
       type: "radio",
       options: ["Feminino", "Masculino", "Não Binário", "Outro"],
     },
+    {
+      field_name: "Portador(a) de alguma deficiência",
+      value: "",
+      mandatory: true,
+      section: "Você",
+      type: "radio",
+      options: ["Sim", "Não"],
+    },
     ...InitialData,
   ]);
 
@@ -60,6 +68,7 @@ const Form = ({ changeScreen, setLoading }) => {
         field.field_name === field_name &&
         (field_name === "Login CIn" ||
           field_name === "Email" ||
+          field_name === "Portador(a) de alguma deficiência" ||
           field_name === "Gênero")
       ) {
         return { ...field, value: inputValue };
